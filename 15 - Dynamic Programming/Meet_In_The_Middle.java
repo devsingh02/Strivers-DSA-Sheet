@@ -1,5 +1,8 @@
 // LC 1755. Closest Subsequence Sum
 
+// When there are -ve elements in the array => Subset Sum fails
+// So we use Meet in the Middle Algorithm
+
 class Solution {
     public int minAbsDifference(int[] nums, int goal) {
         int n = nums.length, mid = n / 2;
