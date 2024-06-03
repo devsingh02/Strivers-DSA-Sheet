@@ -83,3 +83,55 @@ public class Solution {
         return prevRow[k];
     }
 }
+
+// GFG //
+
+// // correct for arr ∈ N
+// class Solution{
+    
+//     public final int MOD = 1000000007;
+    
+// 	public int perfectSum(int arr[],int n, int sum) 
+// 	{ 
+// 	    // Your code goes here
+// 	    int[][] dp = new int[n + 1][sum + 1];
+// 	    for (int[] row : dp) Arrays.fill(row, -1);
+	    
+// 	    return f(n, sum, arr, dp) % MOD;
+// 	} 
+	
+// 	int f(int n, int sum, int[] arr, int[][] dp) {
+// 	    if (sum == 0 && n == 0) return 1;
+// 	    if (n == 0) return 0;
+// 	    if (dp[n][sum] != -1) return dp[n][sum];
+	    
+// 	    int take = (arr[n - 1] <= sum) ? f(n - 1, sum - arr[n - 1], arr, dp) : 0;
+// 	    int leave = f(n - 1, sum, arr, dp);
+// 	    return dp[n][sum] = (take + leave);
+// 	}
+// }
+
+class Solution{
+    
+    public final int MOD = 1000000007;
+    
+	public int perfectSum(int arr[],int n, int sum) 
+	{ 
+	    // Your code goes here
+	    int[][] dp = new int[n + 1][sum + 1];
+	    for (int[] row : dp) Arrays.fill(row, -1);
+	    
+	    return f(n, sum, arr, dp);
+	} 
+	
+	int f(int n, int sum, int[] arr, int[][] dp) {
+	    if (n == 0) return 0;
+	    if (dp[n][sum] != -1) return dp[n][sum];
+	    
+	    int curr = arr[n - 1];
+	    int take = (curr <= sum) ? f(n - 1, sum - curr, arr, dp) : 0;
+	    if (curr == sum) take++;
+	    int leave = f(n - 1, sum, arr, dp);
+	    return dp[n][sum] = (take + leave)  % MOD;
+	}
+}
