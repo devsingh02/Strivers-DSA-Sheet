@@ -1,0 +1,9 @@
+How to identify which pattern to apply :-
+
+<  2/3 Matching Rule >
+if two-third of the question is matching with a pattern, for eg.
+
+Longest String Chain : longest ✔ |  String ❌ |  Chain (== Subsequence) ✔
+Note that it matches two-third by the LIS.
+
+identify problems like that.
