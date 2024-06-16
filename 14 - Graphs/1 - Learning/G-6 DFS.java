@@ -6,7 +6,7 @@ class Solution {
         dfs(0, vis, adj, dfs); // starting point => 0
         return dfs;
     }
-    
+    // Adj List
     void dfs(int node, boolean[] vis, ArrayList<ArrayList<Integer>> adj, ArrayList<Integer> dfs) {
         vis[node] = true; dfs.add(node);
         
@@ -14,6 +14,13 @@ class Solution {
             if (!vis[neighbor]) {
                 dfs(neighbor, vis, adj, dfs); // it will first wrok upon its neighbor/child => recursive
             }
+        }
+    }
+    // Adj Matrix
+    void dfs(int node, boolean[] vis, int[][] adjM) {
+        vis[node] = true;
+        for (int neig = 0; neig < adjM[0].length; neig++) {
+            if (adjM[node][neig] == 1 && !vis[neig]) dfs(neig, vis, adjM);
         }
     }
 }
