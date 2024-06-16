@@ -12,10 +12,9 @@ class Solution {
             int node = q.poll();
             bfs.add(node);
             for (int neighbor : adj.get(node)) { // adj stores the node's adjacent nodes (neighbors)
-                if (!vis[neighbor]) {
-                    q.offer(neighbor);
-                    vis[neighbor] = true;
-                }
+                if (vis[neighbor]) continue; // if already visited, skip
+                q.offer(neighbor);
+                vis[neighbor] = true;
             }
         }
         return bfs;

@@ -1,3 +1,4 @@
+// undirected graphs
 class Solution {
     public List<List<Integer>> printGraph(int V, int edges[][]) {
         List<List<Integer>> adj = new ArrayList<>();

@@ -3,7 +3,7 @@ class Solution {
     public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
         ArrayList<Integer> dfs = new ArrayList<>();
         boolean[] vis = new boolean[V];
-        dfs(0, vis, adj, dfs);
+        dfs(0, vis, adj, dfs); // starting point => 0
         return dfs;
     }
     
@@ -17,3 +17,4 @@ class Solution {
         }
     }
 }
+// No queue required in DFS, as it uses recursion to go deep into the graph.
