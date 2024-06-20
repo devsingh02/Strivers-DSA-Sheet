@@ -1,4 +1,4 @@
-// BFS : Kahn's Algo
+// Topo Sort (BFS) : Kahn's Algo
 
 /*
     1. Store indegree of all nodes.
