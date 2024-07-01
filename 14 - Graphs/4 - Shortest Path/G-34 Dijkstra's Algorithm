@@ -1,0 +1,34 @@
+/*
+ * Dijkstra's Algorithm Intuition:-
+ * We calculate the [distance of nodes] w.r.t. {the closest node to the Source}
+ * Push its neighbors to the Priority Queue and repeat.
+ */
+
+// MOTHER CODE :-
+class Solution
+{   static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
+    {
+        PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1])); // a -> a.get(1)
+     // PriorityQueue<Pair> pq = new PriorityQueue<Pair>((a, b) -> a.dist - b.dist); // compare wrt to dist in Pair class
+        int[] dist = new int[V];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[S] = 0;
+        pq.offer(new int[]{S, 0}); // new ArrayList<>(Arrays.asList(S, 0))
+        
+        while (!pq.isEmpty()) {
+            int[] node = pq.poll();
+            int u = node[0], d = node[1]; // d -> dist from source
+            if (d > dist[u]) continue; // skip (don't check neigs) if dist from src greater than already calculated
+            
+            for (ArrayList<Integer> neig : adj.get(u)) {
+                int v = neig.get(0), wt = neig.get(1);
+                if (d + wt < dist[v]) {
+                    dist[v] = d + wt;
+                    pq.offer(new int[]{v, d + wt});
+                }
+            }
+        }
+        
+        return dist;
+    }
+}

@@ -35,7 +35,6 @@ class Solution {
 }
 
 // // II) DFS Topo Sort
-// // BFS : Kahn's Algo
 // class Solution {
 //     public int[] findOrder(int numCourses, int[][] prerequisites) {
 //         int V = numCourses;

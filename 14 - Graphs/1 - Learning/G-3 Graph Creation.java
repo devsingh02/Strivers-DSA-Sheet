@@ -1,4 +1,5 @@
 // undirected graphs
+// ** Adjacency List of Integers can be created only :- for String/char :- << -'a' >>
 class Solution {
     public List<List<Integer>> printGraph(int V, int edges[][]) {
         List<List<Integer>> adj = new ArrayList<>(); // [] 
