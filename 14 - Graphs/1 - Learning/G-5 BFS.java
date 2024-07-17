@@ -1,5 +1,7 @@
 // In BFS : We vis[i] = true together with adding it to the queue. In DFS : We vis[i] = true after adding it to the stack (recursion).
 
+// TC : O(V + E)
+// SC : O(V)
 class Solution {
     // Function to return Breadth First Traversal of given graph.
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {

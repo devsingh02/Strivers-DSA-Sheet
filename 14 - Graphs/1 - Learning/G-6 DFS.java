@@ -1,3 +1,6 @@
+// TC : O(V + E)
+// SC : O(V)
+
 class Solution {
     // Function to return a list containing the DFS traversal of the graph.
     public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
@@ -12,7 +15,7 @@ class Solution {
         
         for (int neighbor : adj.get(node)) {
             if (!vis[neighbor]) {
-                dfs(neighbor, vis, adj, dfs); // it will first wrok upon its neighbor/child => recursive
+                dfs(neighbor, vis, adj, dfs); // it will first work upon its neighbor/child => recursive
             }
         }
     }

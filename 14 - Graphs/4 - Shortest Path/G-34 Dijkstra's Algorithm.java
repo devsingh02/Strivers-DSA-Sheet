@@ -18,7 +18,8 @@ class Solution
 {   static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
     {
         PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a[1])); // a -> a.get(1)
-     // PriorityQueue<Pair> pq = new PriorityQueue<Pair>((a, b) -> a.dist - b.dist); // compare wrt to dist in Pair class
+     // PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]); // compare wrt to dist in Pair class
+     // PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.dist - b.dist); // compare wrt to dist in Pair class
         int[] dist = new int[V];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[S] = 0;
@@ -112,7 +113,7 @@ public class Dijkstra {
             path.add(i);
             i = prev[i];
         }
-        path.add(i); // add 1 also
+        path.add(i); // add 1 /src also
 
         Collections.reverse(path);
         return path;
