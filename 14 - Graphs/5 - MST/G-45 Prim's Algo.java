@@ -1,7 +1,7 @@
 class MST {
     static int MSTSum(int V, int E, List<List<int[]>> adj) {
 
-        List<List<Integer>> MST = new ArrayList<>(); // store MST edges : [node, parent]
+        List<List<Integer>> MST = new ArrayList<>(); // store MST edges : [parent, node]
         boolean[] vis = new boolean[V];
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[2] - b[2]); // edges pushed [node, parent, wt]
         pq.offer(new int[]{0, -1, 0}); // [node, parent, wt]
