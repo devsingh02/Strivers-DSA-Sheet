@@ -12,8 +12,8 @@ class Solution
         int[] indg = new int[V];
         Queue<Integer> q = new LinkedList<>();
         // making indegree array
-        for (int i = 0; i < V; i++) {
-            for (int neig : adj.get(i)) indg[neig]++; // 0 -> 1 : 1's indegree increases
+        for (int u = 0; u < V; u++) {
+            for (int v : adj.get(u)) indg[v]++; // 0 -> 1 : 1's indegree increases
         }
         // Start BFS
         for (int i = 0; i < V; i++) {
